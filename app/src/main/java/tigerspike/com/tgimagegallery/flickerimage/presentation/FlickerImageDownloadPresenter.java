@@ -1,5 +1,6 @@
 package tigerspike.com.tgimagegallery.flickerimage.presentation;
 
+import com.tigerspike.flickerimage.model.FlickerImageData;
 import com.tigerspike.interactor.DefaultObserver;
 import com.tigerspike.interactor.Interactor;
 
@@ -22,10 +23,18 @@ public class FlickerImageDownloadPresenter {
     }
 
     public void onLoadImageButtonClicked() {
-        imageDownloadInteractor.execute(new DefaultObserver() {
+        //TODO this is giving unchecked exception check why?
+        imageDownloadInteractor.execute(new DefaultObserver<FlickerImageData>() {
             @Override
             public void onError(Throwable e) {
+                view.hideProgressBar();
+                view.showErrorView();
+            }
 
+            @Override
+            public void onNext(FlickerImageData flickerImageData) {
+                view.hideProgressBar();
+                view.populateGridView(flickerImageData);
             }
         }, null);
     }

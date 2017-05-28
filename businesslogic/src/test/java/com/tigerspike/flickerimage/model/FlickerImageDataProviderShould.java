@@ -37,30 +37,30 @@ public class FlickerImageDataProviderShould {
     }
 
     @Test
-    public void transformAuthorNameCorrectly() {
+    public void returnAuthorNameCorrectly() {
 
         Assert.assertEquals(flickerDataProvider.getAuthorName(FIRST_INDEX), NAME_1);
     }
 
 
     @Test
-    public void transformImageLinksCorrectly() {
+    public void returnImageLinksCorrectly() {
 
         Assert.assertEquals(flickerDataProvider.getImageLink(FIRST_INDEX), IMAGELINK_1);
     }
 
     @Test
-    public void transformTagCorrectly() {
+    public void returnTagCorrectly() {
         Assert.assertEquals(flickerDataProvider.getImageTag(FIRST_INDEX), TAG_1);
     }
 
     @Test
-    public void transformTitleCorrectly() {
+    public void returnTitleCorrectly() {
         Assert.assertEquals(flickerDataProvider.getImageTitle(SECOND_INDEX), TITLE_2);
     }
 
     @Test
-    public void transformPublishDateCorrectly() {
+    public void returnPublishDateCorrectly() {
         Assert.assertEquals(flickerDataProvider.getPublishDate(SECOND_INDEX), PUBLISH_2);
     }
 }

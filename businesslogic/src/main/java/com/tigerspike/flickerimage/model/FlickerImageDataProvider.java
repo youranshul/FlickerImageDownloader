@@ -34,4 +34,9 @@ public class FlickerImageDataProvider implements FlickerImageData {
     public String getPublishDate(int index) {
         return entryDataList.get(index).getPublishDate();
     }
+
+    @Override
+    public int getItemsSize() {
+        return entryDataList != null ? entryDataList.size() : 0;
+    }
 }

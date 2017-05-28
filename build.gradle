@@ -20,6 +20,7 @@ buildscript {
         javaxAnnotationVersion = '1.2'
         mockitoVersion = '2.+'
         junitVersion = '4.12'
+        cardViewVersion = '25.3.1'
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.2'
@@ -50,6 +51,7 @@ ext {
     javaxInject = 'javax.inject:javax.inject:' + javaxInjectVersion
     mockito = 'org.mockito:mockito-core:' + mockitoVersion
     junit = 'junit:junit:' + junitVersion
+    cardview = 'com.android.support:cardview-v7:' + cardViewVersion
 }
 
 allprojects {

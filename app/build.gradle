@@ -52,5 +52,5 @@ dependencies {
     compile rootProject.ext.rxAndroid
     compile rootProject.ext.javaxAnnotation
     compile rootProject.ext.javaxInject;
-
+    compile rootProject.ext.cardview;
 }
