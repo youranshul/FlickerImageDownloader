@@ -1,0 +1,59 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        jcenter()
+    }
+    ext {
+        rxjavaVersion = '2.0.3'
+        appCompactVersion = '25.3.1'
+        constraintLayoutVersion = '1.0.2'
+        supportDesignVersion = '25.3.1'
+        androidSupportAnnotationVersion = '25.3.1'
+        daggerAndDaggerCompilerVersion = '2.0.2'
+        butterknifeVersion = '7.0.1'
+        rxAndroidVersion = '2.0.1'
+        retrofit2Version = '2.1.0'
+        loggingIntercepterVersion = '3.3.1'
+        rxjavaAdapterVersion = '1.0.0'
+        simpleXmlConverterVersion = '2.1.0'
+        javaxInjectVersion = '1'
+        javaxAnnotationVersion = '1.2'
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.2'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+ext {
+
+    appCompact = 'com.android.support:appcompat-v7:' + appCompactVersion
+    constraintLayout = 'com.android.support.constraint:constraint-layout:' + constraintLayoutVersion
+    supportDesign = 'com.android.support:design:' + supportDesignVersion
+    annotations = 'com.android.support:support-annotations:' + androidSupportAnnotationVersion
+
+    //Third party libs
+    rxjava = 'io.reactivex.rxjava2:rxjava:' + rxjavaVersion
+    daggerCompiler = 'com.google.dagger:dagger-compiler:' + daggerAndDaggerCompilerVersion
+    dagger = 'com.google.dagger:dagger:' + daggerAndDaggerCompilerVersion
+    butterknife = 'com.jakewharton:butterknife:' + butterknifeVersion
+    rxAndroid = 'io.reactivex.rxjava2:rxandroid:' + rxAndroidVersion
+    retrofit2 = 'com.squareup.retrofit2:retrofit:' + retrofit2Version
+    loggingInterceptor = 'com.squareup.okhttp3:logging-interceptor:' + loggingIntercepterVersion
+    rxjavaAdapter = 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:' + rxjavaAdapterVersion
+    xmlConverter = 'com.squareup.retrofit2:converter-simplexml:' + simpleXmlConverterVersion
+    javaxAnnotation = 'javax.annotation:javax.annotation-api:' + javaxAnnotationVersion
+    javaxInject = 'javax.inject:javax.inject:' + javaxInjectVersion
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

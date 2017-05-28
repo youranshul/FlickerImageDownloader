@@ -1,0 +1,20 @@
+apply plugin: 'java'
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    compile project(':businesslogic')
+
+    compile rootProject.ext.retrofit2
+    compile rootProject.ext.loggingInterceptor
+    compile rootProject.ext.rxjavaAdapter
+    compile(rootProject.ext.xmlConverter) {
+        exclude group: 'xpp3', module: 'xpp3'
+        exclude group: 'stax', module: 'stax-api'
+        exclude group: 'stax', module: 'stax'
+    }
+    compile rootProject.ext.javaxInject;
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
