@@ -6,8 +6,10 @@ import com.tigerspike.interactor.Interactor;
 
 import javax.inject.Inject;
 
+import tigerspike.com.tgimagegallery.app.PerActivity;
 import tigerspike.com.tgimagegallery.flickerimage.view.FlickerImageView;
 
+@PerActivity
 public class FlickerImageDownloadPresenter {
 
     private final Interactor imageDownloadInteractor;

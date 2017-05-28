@@ -43,7 +43,7 @@ public class BaseActivity extends AppCompatActivity {
 
     protected void addFragment(final Fragment fragment, final String tag) {
         final FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(fragmentContainer.getId(), fragment, tag);
+        transaction.add(fragmentContainer.getId(), fragment, tag);
         transaction.commit();
     }
 }

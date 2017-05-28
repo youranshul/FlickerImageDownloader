@@ -21,6 +21,7 @@ buildscript {
         mockitoVersion = '2.+'
         junitVersion = '4.12'
         cardViewVersion = '25.3.1'
+        picassoVersion = '2.5.2'
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.2'
@@ -52,6 +53,7 @@ ext {
     mockito = 'org.mockito:mockito-core:' + mockitoVersion
     junit = 'junit:junit:' + junitVersion
     cardview = 'com.android.support:cardview-v7:' + cardViewVersion
+    picasso = 'com.squareup.picasso:picasso:' + picassoVersion
 }
 
 allprojects {

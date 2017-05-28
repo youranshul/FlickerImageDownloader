@@ -13,14 +13,15 @@ import tigerspike.com.tgimagegallery.flickerimage.di.FlickerImageComponent;
 public class FlickerImageGallery extends BaseActivity implements
         HasComponent<FlickerImageComponent> {
 
-
     private FlickerImageComponent flickerImageComponent;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initDaggerGraph();
-        addFragment(FlickerImageGalleryFragment.newInstance(), FlickerImageGalleryFragment.TAG);
+        if (savedInstanceState == null) {
+            addFragment(new FlickerImageGalleryFragment(), FlickerImageGalleryFragment.TAG);
+        }
     }
 
     private void initDaggerGraph() {

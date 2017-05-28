@@ -60,16 +60,9 @@ public class ImageEntry {
     }
 
     private String getImageUrl() {
-        if (imageLinkList != null && imageLinkList.size() > 0) {
-            try {
-                if (imageLinkList.get(0).getImageUrl() != null) {
-                    return imageLinkList.get(0).getImageUrl();
-                } else if (imageLinkList.get(1).getImageUrl() != null) {
-                    return imageLinkList.get(1).getImageUrl();
-                }
-            } catch (ArrayIndexOutOfBoundsException ex) {
-                return EMPTY;
-            }
+        if (imageLinkList != null && imageLinkList.size() > 1
+                && imageLinkList.get(1).getImageUrl() != null) {
+            return imageLinkList.get(1).getImageUrl();
         }
         return EMPTY;
     }
