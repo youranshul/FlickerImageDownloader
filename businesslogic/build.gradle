@@ -5,6 +5,9 @@ dependencies {
 
     compile rootProject.ext.rxjava
     compile rootProject.ext.javaxInject;
+
+    testCompile rootProject.ext.mockito;
+    testCompile rootProject.ext.junit;
 }
 
 sourceCompatibility = "1.7"

@@ -18,6 +18,8 @@ buildscript {
         simpleXmlConverterVersion = '2.1.0'
         javaxInjectVersion = '1'
         javaxAnnotationVersion = '1.2'
+        mockitoVersion = '2.+'
+        junitVersion = '4.12'
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.2'
@@ -46,6 +48,8 @@ ext {
     xmlConverter = 'com.squareup.retrofit2:converter-simplexml:' + simpleXmlConverterVersion
     javaxAnnotation = 'javax.annotation:javax.annotation-api:' + javaxAnnotationVersion
     javaxInject = 'javax.inject:javax.inject:' + javaxInjectVersion
+    mockito = 'org.mockito:mockito-core:' + mockitoVersion
+    junit = 'junit:junit:' + junitVersion
 }
 
 allprojects {

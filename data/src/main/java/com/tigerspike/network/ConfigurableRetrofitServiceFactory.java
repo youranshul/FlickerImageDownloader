@@ -1,10 +1,5 @@
 package com.tigerspike.network;
 
-import org.simpleframework.xml.Serializer;
-import org.simpleframework.xml.convert.AnnotationStrategy;
-import org.simpleframework.xml.core.Persister;
-import org.simpleframework.xml.strategy.Strategy;
-
 import java.io.IOException;
 
 import javax.inject.Inject;
@@ -61,13 +56,10 @@ public class ConfigurableRetrofitServiceFactory implements RetrofitServiceFactor
     @Override
     public <T> T getService(Class<T> service) {
 
-        Strategy strategy = new AnnotationStrategy();
-        Serializer serializer = new Persister(strategy);
-
         Retrofit.Builder builder = new Retrofit.Builder();
         builder.baseUrl(HttpConstants.BASE_URL)
                 .addCallAdapterFactory(RxErrorHandlingCallAdapterFactory.create())
-                .addConverterFactory(SimpleXmlConverterFactory.create(serializer))
+                .addConverterFactory(SimpleXmlConverterFactory.create())
                 .client(clientBuilder.build())
                 .build();
 

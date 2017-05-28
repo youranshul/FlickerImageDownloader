@@ -21,8 +21,7 @@ public class ImageDownloadInteractor extends Interactor<FlickerImageData, Void> 
     }
 
     @Override
-    public Observable<FlickerImageData> buildUseCase(Void aVoid) {
-
+    public Observable<FlickerImageData> buildUseCase(Void noRequest) {
         return downloadService.downloadImages();
     }
 }

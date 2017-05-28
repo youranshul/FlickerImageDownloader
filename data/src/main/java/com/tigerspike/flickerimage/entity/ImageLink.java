@@ -1,9 +1,19 @@
 package com.tigerspike.flickerimage.entity;
 
-import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Attribute;
+import org.simpleframework.xml.Root;
 
-class ImageLink {
+@Root(strict = false)
+public class ImageLink {
 
-    @Element(name = "href")
+    @Attribute(name = "href", required = false)
     private String imageUrl;
+
+    public ImageLink(@Attribute(name = "href") String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
 }

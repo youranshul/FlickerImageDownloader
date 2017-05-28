@@ -5,12 +5,14 @@ import org.simpleframework.xml.Root;
 
 import java.util.List;
 
-@Root(name = "feed")
+@Root(strict = false)
 public class FlickerImageResponse {
 
+    @ElementList(entry = "entry", inline = true)
     private final List<ImageEntry> imageEntryList;
 
-    public FlickerImageResponse(@ElementList(name = "entry") List<ImageEntry> imageEntryList) {
+    public FlickerImageResponse(
+            @ElementList(entry = "entry", inline = true) List<ImageEntry> imageEntryList) {
         this.imageEntryList = imageEntryList;
     }
 
