@@ -10,7 +10,7 @@ public interface FlickerImageData {
 
     String getImageTitle(int index);
 
-    String getPublishDate(int index);
+    long getPublishDate(int index);
 
     int getItemsSize();
 }

@@ -31,7 +31,7 @@ public class FlickerImageDataProvider implements FlickerImageData {
     }
 
     @Override
-    public String getPublishDate(int index) {
+    public long getPublishDate(int index) {
         return entryDataList.get(index).getPublishDate();
     }
 

@@ -1,6 +1,7 @@
 package com.tigerspike.flickerimage.interactor;
 
 import com.tigerspike.flickerimage.model.FlickerImageData;
+import com.tigerspike.flickerimage.model.NoRequest;
 import com.tigerspike.flickerimage.service.FlickerImageDownloadService;
 import com.tigerspike.interactor.Interactor;
 import com.tigerspike.interactor.PostExecutionThread;
@@ -9,7 +10,7 @@ import javax.inject.Inject;
 
 import io.reactivex.Observable;
 
-public class ImageDownloadInteractor extends Interactor<FlickerImageData, Void> {
+public class ImageDownloadInteractor extends Interactor<FlickerImageData, NoRequest> {
 
     private final FlickerImageDownloadService downloadService;
 
@@ -21,7 +22,7 @@ public class ImageDownloadInteractor extends Interactor<FlickerImageData, Void> 
     }
 
     @Override
-    public Observable<FlickerImageData> buildUseCase(Void noRequest) {
+    public Observable<FlickerImageData> buildUseCase(NoRequest noRequest) {
         return downloadService.downloadImages();
     }
 }

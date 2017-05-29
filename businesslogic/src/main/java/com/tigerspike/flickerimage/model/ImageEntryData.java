@@ -5,10 +5,10 @@ public class ImageEntryData {
     private final String authorName;
     private final String tag;
     private final String title;
-    private final String publishDate;
+    private final long publishDate;
     private final String imageLink;
 
-    public ImageEntryData(String authorName, String tag, String title, String publish,
+    public ImageEntryData(String authorName, String tag, String title, long publish,
             String imageLink) {
         this.authorName = authorName;
         this.tag = tag;
@@ -29,7 +29,7 @@ public class ImageEntryData {
         return title;
     }
 
-    public String getPublishDate() {
+    public long getPublishDate() {
         return publishDate;
     }
 

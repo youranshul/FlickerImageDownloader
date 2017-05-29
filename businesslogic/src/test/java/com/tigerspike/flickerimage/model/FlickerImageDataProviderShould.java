@@ -12,12 +12,12 @@ public class FlickerImageDataProviderShould {
     private static final String NAME_1 = "name1";
     private static final String TAG_1 = "tag1";
     private static final String TITLE_1 = "title1";
-    private static final String PUBLISH_1 = "publish1";
+    private static final long PUBLISH_1 = 100;
     private static final String IMAGELINK_1 = "imagelink1";
     private static final String NAME_2 = "name2";
     private static final String TAG_2 = "tag2";
     private static final String TITLE_2 = "title2";
-    private static final String PUBLISH_2 = "publish2";
+    private static final long PUBLISH_2 = 200;
     private static final String IMAGELINK_2 = "imagelink2";
     private static final int FIRST_INDEX = 0;
     private static final int SECOND_INDEX = 1;
@@ -45,7 +45,6 @@ public class FlickerImageDataProviderShould {
 
     @Test
     public void returnImageLinksCorrectly() {
-
         Assert.assertEquals(flickerDataProvider.getImageLink(FIRST_INDEX), IMAGELINK_1);
     }
 

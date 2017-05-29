@@ -18,12 +18,12 @@ public class FlickerImageResponseMapperShould {
     private static final String NAME_1 = "name1";
     private static final String TAG_1 = "tag1";
     private static final String TITLE_1 = "title1";
-    private static final String PUBLISH_1 = "publish1";
+    private static final String PUBLISH_1 = "2017-06-30T10:31:38Z";
     private static final String IMAGELINK_1 = "imagelink1";
     private static final String NAME_2 = "name2";
     private static final String TAG_2 = "tag2";
     private static final String TITLE_2 = "title2";
-    private static final String PUBLISH_2 = "publish2";
+    private static final String PUBLISH_2 = "2017-05-29T10:31:38Z";
     private static final String IMAGELINK_2 = "imagelink2";
     private static final int FIRST_INDEX = 0;
     private static final int SECOND_INDEX = 1;
@@ -55,7 +55,7 @@ public class FlickerImageResponseMapperShould {
         imageLinkListTwo.add(link1);
         imageLinkListTwo.add(link2);
         Author author2 = new Author(NAME_2);
-        ImageEntry entryTwo = new ImageEntry(author1, imageLinkListTwo, TITLE_2, PUBLISH_2, TAG_2);
+        ImageEntry entryTwo = new ImageEntry(author2, imageLinkListTwo, TITLE_2, PUBLISH_2, TAG_2);
 
         imageEntryList.add(entryOne);
         imageEntryList.add(entryTwo);
@@ -68,16 +68,16 @@ public class FlickerImageResponseMapperShould {
 
         FlickerImageData flickerImageData = responseMapper.transform(flickerImageResponse);
 
-        Assert.assertEquals(flickerImageData.getAuthorName(FIRST_INDEX), NAME_1);
+        Assert.assertEquals(flickerImageData.getAuthorName(FIRST_INDEX), NAME_2);
     }
 
 
     @Test
-    public void transformImageLinksCorrectly() {
+    public void transformImageLinksSortedByPublishDateCorrectly() {
 
         FlickerImageData flickerImageData = responseMapper.transform(flickerImageResponse);
 
-        Assert.assertEquals(flickerImageData.getImageLink(FIRST_INDEX), IMAGELINK_1);
+        Assert.assertEquals(flickerImageData.getImageLink(FIRST_INDEX), IMAGELINK_2);
     }
 
     @Test
@@ -85,7 +85,7 @@ public class FlickerImageResponseMapperShould {
 
         FlickerImageData flickerImageData = responseMapper.transform(flickerImageResponse);
 
-        Assert.assertEquals(flickerImageData.getImageTag(FIRST_INDEX), TAG_1);
+        Assert.assertEquals(flickerImageData.getImageTag(FIRST_INDEX), TAG_2);
     }
 
     @Test
@@ -93,16 +93,14 @@ public class FlickerImageResponseMapperShould {
 
         FlickerImageData flickerImageData = responseMapper.transform(flickerImageResponse);
 
-        Assert.assertEquals(flickerImageData.getImageTitle(SECOND_INDEX), TITLE_2);
+        Assert.assertEquals(flickerImageData.getImageTitle(SECOND_INDEX), TITLE_1);
     }
 
     @Test
-    public void transformPublishDateCorrectly() {
+    public void sortByPublishDateCorrectly() {
 
         FlickerImageData flickerImageData = responseMapper.transform(flickerImageResponse);
 
-        Assert.assertEquals(flickerImageData.getPublishDate(SECOND_INDEX), PUBLISH_2);
+        Assert.assertEquals(flickerImageData.getImageLink(SECOND_INDEX), IMAGELINK_2);
     }
-
-
 }

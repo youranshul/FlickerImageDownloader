@@ -53,7 +53,7 @@ public class FlickerImageGalleryFragment extends BaseFragment implements Flicker
         super.onViewCreated(view, savedInstanceState);
         imageDownloadPresenter.onViewCreated(this);
         if (savedInstanceState == null) {
-            imageDownloadPresenter.onLoadImageButtonClicked();
+            imageDownloadPresenter.loadFlickerImages();
         }
         initGridLayout();
     }
@@ -69,11 +69,6 @@ public class FlickerImageGalleryFragment extends BaseFragment implements Flicker
 
     }
 
-    /*  @OnClick(R.id.load_image_btn)
-      public void loadImageClicked() {
-          imageDownloadPresenter.onLoadImageButtonClicked();
-      }
-  */
     private void initFlickerImageDependency() {
         getComponent(FlickerImageComponent.class).inject(this);
     }
