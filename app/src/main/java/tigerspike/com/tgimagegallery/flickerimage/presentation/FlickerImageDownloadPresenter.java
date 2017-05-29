@@ -26,6 +26,7 @@ public class FlickerImageDownloadPresenter {
     }
 
     public void loadFlickerImages() {
+        view.showProgressBar();
         imageDownloadInteractor.execute(new FlickerImageObserver(), new NoRequest());
     }
 

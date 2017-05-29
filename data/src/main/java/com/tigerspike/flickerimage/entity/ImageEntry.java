@@ -54,6 +54,7 @@ public class ImageEntry {
             return 0;
         }
 
+        //Todo Move this in di and find better way to format dates
         if (dateFormatter == null) {
             dateFormatter = new DateFormatter();
         }
