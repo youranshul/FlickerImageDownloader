@@ -1,6 +1,6 @@
 # FlickerImageDownloader
 This project is an android app that displays the images from the public flicker api.
-Third Party libraries used to build the app which can be seen in the .gradle file for each module
+Third Party libraries have been used to build the app which can be seen in the .gradle file for each module
 
 # Architecture used is MVP and followed modular approach with app , businesslogic and data layers
 
